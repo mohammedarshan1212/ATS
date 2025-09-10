@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arshan Traders - Premium Leather Goods & Business Services</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #8B4513;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%238B4513"/><path d="M0 0L100 100" stroke="%23644A34" stroke-width="2"/><path d="M100 0L0 100" stroke="%23644A34" stroke-width="2"/></svg>');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+        }
+        
+        section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #8B4513;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #8B4513;
+        }
+        
+        .about-content, .services-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .about-text, .services-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image, .services-image {
+            flex: 1;
+            min-width: 300px;
+            background-color: #e9e9e9;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8B4513;
+            font-weight: bold;
+        }
+        
+        /* Products Section */
+        .products {
+            background-color: #f0f0f0;
+        }
+        
+        .product-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .product-category {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 350px;
+            transition: transform 0.3s;
+        }
+        
+        .product-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #e9e9e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8B4513;
+            font-weight: bold;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            color: #8B4513;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            color: #8B4513;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: #f0f0f0;
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-details p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        form input, form textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        button {
+            background-color: #8B4513;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #654321;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Arshan Traders</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Welcome to Arshan Traders</h1>
+            <p>Your one-stop solution for premium leather goods and essential business services. We combine traditional craftsmanship with modern efficiency to deliver excellence every time.</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Arshan Traders is a proprietorship founded by Mohammed Arshan, built on a foundation of quality, integrity, and customer satisfaction. Located in Tirunelveli, Tamil Nadu, we have a deep-rooted commitment to serving our community with products that offer both protection and precision.</p>
+                    <p>Our mission is to support our clients' success by providing high-grade leather products and ensuring their financial compliance through our specialized services.</p>
+                </div>
+                <div class="about-image">
+                    [Image of Mohammed Arshan or Workshop]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-categories">
+                <!-- Leather Hand Gloves -->
+                <div class="product-category">
+                    <div class="product-image">
+                        [Leather Hand Gloves Image]
+                    </div>
+                    <div class="product-info">
+                        <h3>Leather Hand Gloves Manufacturing</h3>
+                        <p>We produce a wide variety of leather hand gloves tailored for different applications, focusing on protection, durability, and comfort.</p>
+                        <ul>
+                            <li><strong>Industrial Gloves:</strong> Designed for demanding environments like welding, construction, and manufacturing.</li>
+                            <li><strong>Welder's Gloves:</strong> Made with high-quality leather for excellent heat resistance and dexterity.</li>
+                            <li><strong>Materials:</strong> We use cowhide, pigskin, and goatskin for their strength and flexibility.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Leather Aprons -->
+                <div class="product-category">
+                    <div class="product-image">
+                        [Leather Apron Image]
+                    </div>
+                    <div class="product-info">
+                        <h3>Leather Apron Manufacturing</h3>
+                        <p>Our leather aprons are crafted to offer robust protection and long-lasting performance across various professions.</p>
+                        <ul>
+                            <li><strong>Welding and Blacksmith Aprons:</strong> Shield against sparks, heat, and molten metal splashes.</li>
+                            <li><strong>Woodworking Aprons:</strong> Protect clothing from dust, splinters, and tools.</li>
+                            <li><strong>Features:</strong> Adjustable straps, reinforced stitching, and multiple pockets for tools.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <!-- Stitching Services -->
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Stitching Services</h3>
+                        <p>We offer professional stitching services, specializing in custom alterations and bespoke projects.</p>
+                        <ul>
+                            <li><strong>Precision and Quality:</strong> Skilled craftsmanship ensuring perfect stitches.</li>
+                            <li><strong>Custom Projects:</strong> From repairs to new creations, we bring your ideas to life.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- GST Filing Services -->
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>GST Filing Services (Occasional)</h3>
+                        <p>Navigating GST complexities can be challenging. Our occasional services ensure you remain compliant with Indian tax regulations.</p>
+                        <ul>
+                            <li><strong>Timely and Accurate Filings:</strong> Preparation and submission of GSTR-1, GSTR-3B returns.</li>
+                            <li><strong>Expert Guidance:</strong> Hassle-free management of GST formalities.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Accounting Services -->
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Accounting Services (Occasional)</h3>
+                        <p>For small businesses and startups, we provide support to maintain clean financial records.</p>
+                        <ul>
+                            <li><strong>Bookkeeping:</strong> Accurate and organized financial record maintenance.</li>
+                            <li><strong>Financial Overview:</strong> Clear understanding of your finances with detailed support.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-details">
+                        <p><strong>Address:</strong> Tirunelveli, Tamil Nadu, India</p>
+                        <p><strong>Phone:</strong> [Your Phone Number]</p>
+                        <p><strong>Email:</strong> [Your Email Address]</p>
+                    </div>
+                    <p>For inquiries about our products, to request a quote, or to discuss your specific service needs, please get in touch with us. We look forward to assisting you.</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone">
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Arshan Traders. All Rights Reserved.</p>
+            <p>Designed with ❤️ for quality and excellence</p>
+        </div>
+    </footer>
+</body>
+</html>
